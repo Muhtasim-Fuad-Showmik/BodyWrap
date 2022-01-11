@@ -1,3 +1,16 @@
+:root {
+  --darkred: #9b2226;
+  --red: #ae2012;
+  --orange: #bb3e03;
+  --chromeyellow: #ca6702;
+  --yellow: #ee9b00;
+  --paleyellow: #e9d8a6;
+  --paleteal: #94d2bd;
+  --teal: #0a9396;
+  --darkteal: #005f73;
+  --blackteal: #001219;
+}
+
 body {
   margin: 0px;
   font-family: 'Urbanist', sans-serif;
