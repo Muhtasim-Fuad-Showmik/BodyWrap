@@ -2,6 +2,8 @@ import React from 'react';
 import Announcement from '../components/Announcement';
 import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
+import Categories from '../components/Categories';
+import Products from '../components/Products';
 
 class Home extends React.Component {
     render() { 
@@ -10,7 +12,8 @@ class Home extends React.Component {
                 <Announcement />
                 <Navbar />
                 <Slider />
-                <h1>Home Page</h1>
+                <Categories />
+                <Products />
             </div>
         );
     }

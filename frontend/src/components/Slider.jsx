@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import { useState } from "react";
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
+import { sliderItems } from "../data";
 
 const Container = styled.div`
     width: 100%;
     height: 100vh;
     display: flex;
     position: relative;
+    overflow: hidden;
 `
 
 const Arrow = styled.div`
@@ -24,16 +27,22 @@ const Arrow = styled.div`
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
+    z-index: 2;
 `
 
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
+    transition: all 1.5s ease;
+    transform: translateX(${props=>props.slideIndex * -100}vw);
 `
 
 const Slide = styled.div`
     width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
+    background-color: #${props => props.bg};
 `
 
 const ImgContainer = styled.div`
@@ -42,7 +51,7 @@ const ImgContainer = styled.div`
 `
 
 const Image = styled.img`
-    width: 100%
+    height: 80%
 `
 
 const InfoContainer = styled.div`
@@ -68,24 +77,35 @@ const Button = styled.button`
 `
 
 const Slider = () => {
+    const [slideIndex, setSlideIndex] = useState(0);
+    const handleClick = (direction) => {
+        if(direction === "left"){
+            setSlideIndex(slideIndex > 0 ? slideIndex-1 : sliderItems.length-1 );
+        } else {
+            setSlideIndex(slideIndex < sliderItems.length-1 ? slideIndex+1 : 0 );
+        }
+    };
+
     return ( 
         <Container>
-            <Arrow direction="left">
+            <Arrow direction="left" onClick={()=>handleClick("left")}>
                 <KeyboardArrowLeft></KeyboardArrowLeft>
             </Arrow>
-            <Wrapper>
-                <Slide>
-                    <ImgContainer>
-                        <Image src="images/frock-woman-front-slider-1-whitebgbarely.jpg" />
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>SUMMER SALE</Title>
-                        <Description>DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.</Description>
-                        <Button>SHOP NOW</Button>
-                    </InfoContainer>
-                </Slide>
+            <Wrapper slideIndex={slideIndex}>
+                { sliderItems.map((item) => (
+                    <Slide bg={item.bg} key={item.id}>
+                        <ImgContainer>
+                            <Image src={item.img} />
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title}</Title>
+                            <Description>{item.desc}</Description>
+                            <Button>SHOP NOW</Button>
+                        </InfoContainer>
+                    </Slide>
+                )) }
             </Wrapper>
-            <Arrow direction="right">
+            <Arrow direction="right"  onClick={()=>handleClick("right")}>
                 <KeyboardArrowRight></KeyboardArrowRight>
             </Arrow>
         </Container>
