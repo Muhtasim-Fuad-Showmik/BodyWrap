@@ -56,6 +56,7 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
     flex: 1;
+    padding: 10px;
 `
 
 const Title = styled.h1`

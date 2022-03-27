@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar';
 import Slider from '../components/Slider';
 import Categories from '../components/Categories';
 import Products from '../components/Products';
+import Newsletter from '../components/Newsletter';
+import Footer from '../components/Footer';
 
 class Home extends React.Component {
     render() { 
@@ -14,6 +16,8 @@ class Home extends React.Component {
                 <Slider />
                 <Categories />
                 <Products />
+                <Newsletter />
+                <Footer />
             </div>
         );
     }

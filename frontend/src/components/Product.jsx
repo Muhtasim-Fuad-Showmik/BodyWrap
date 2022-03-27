@@ -45,9 +45,11 @@ const Circle = styled.div`
     background-color: white;
     position: absolute;
 `;
+
 const Image = styled.img`
     height: 75%;
     z-index: 2;
+    border-radius: 6px;
 `;
 
 const Icon = styled.div`

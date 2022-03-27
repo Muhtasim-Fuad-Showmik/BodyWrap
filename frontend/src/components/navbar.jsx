@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SearchIcon from '@material-ui/icons/Search';
 import Badge from '@material-ui/core/Badge';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 const Container = styled.div`
     height: 60px;
@@ -83,7 +83,7 @@ const Navbar = () => {
                     <MenuItem>Sign In</MenuItem>
                     <MenuItem>
                         <Badge badgeContent={4} color="primary">
-                            <ShoppingCartIcon color="action" />
+                            <ShoppingCartOutlinedIcon color="action" />
                         </Badge>
                     </MenuItem>
                 </Right>
