@@ -11,8 +11,8 @@ class Home extends React.Component {
     render() { 
         return (
             <div>
-                <Announcement />
                 <Navbar />
+                <Announcement />
                 <Slider />
                 <Categories />
                 <Products />
