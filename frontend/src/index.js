@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
+import Product from './pages/Product';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductList />
+    <Product />
   </React.StrictMode>,
   document.getElementById('root')
 );
