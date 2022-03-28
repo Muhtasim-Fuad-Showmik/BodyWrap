@@ -1,3 +1,4 @@
+import "../starability-heartbeat.css";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -11,27 +12,99 @@ const Wrapper = styled.div`
     display: flex;
 `
 
-const ImgContainer = styled.div`
+const ImgAndReviewsContainer = styled.div`
     flex: 1;
 `
 
 const Image = styled.img`
     width: 100%;
+    height: 100vh;
+    object-fit: cover;
+`
+
+const TinyImage = styled.img`
+    width: 113px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 5px 5px;
 `
 
 const InfoContainer = styled.div`
     flex: 1;
+    padding: 0px 50px;
 `
 
-const Title = styled.h1``
+const Title = styled.h1`
+    font-weight: 200;
 
-const Price = styled.div``
+`
 
-const Ratings = styled.div``
+const Price = styled.div`
+    font-weight: 100;
+    font-size: 40px;
+    margin: 20px 0px;
+`
 
-const Description = styled.p``
+const Ratings = styled.div`
+    margin: 20px 0px;
+`
 
-const Specifications = styled.span``
+const Description = styled.p`
+    margin: 20px 0px;
+`
+
+const ReviewContainer = styled.div`
+    flex: 1;
+    padding: 0px 10px;
+    height: 450px;
+    overflow: auto;
+    margin-right: 20px;
+
+    &:-webkit-scrollbar-track {
+        -webkit-box-shadow: none;
+        background-color: #F5F5F5;
+    }
+
+    &:-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background-color: #F5F5F5;
+    }
+
+    &:-webkit-scrollbar-thumb {
+        background-color: #337ab7;
+        border-radius: 10px;
+    }
+`
+
+const Review = styled.div`
+`
+
+const ReviewForm = styled.div`
+`
+
+const RatingInput = styled.div`
+`
+
+const ReviewText = styled.textarea`
+    display: block;
+    width: 95%;
+    border-radius: 5px;
+
+`
+
+const SpecificationContainer = styled.span`
+    flex: 1;
+    padding: 0px 10px;
+`
+
+const Specifications = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 350px;
+`
 
 const Product = () => {
   return (
@@ -39,15 +112,19 @@ const Product = () => {
         <Navbar/>
         <Announcement/>
         <Wrapper>
-            <ImgContainer>
+            <ImgAndReviewsContainer>
                 <Image src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-1.webp"/>
-            </ImgContainer>
+                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-1.webp"/>
+                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-2.webp"/>
+                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-3.jpg"/>
+                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-4.webp"/>
+            </ImgAndReviewsContainer>
             <InfoContainer>
                 <Title>Saree Mall Blazing Red Linen Blend Saree</Title>
                 <Price>989/-</Price>
 
                 <Ratings>
-                    4/5
+                    <p class="starability-result" data-rating="4"></p>
                 </Ratings>
 
                 <Description>
@@ -96,9 +173,60 @@ const Product = () => {
                     <p>Blouse fabric: Linen Blend</p>
                     <p>Machine wash</p>
                 </Description>
-                <Specifications>
-                    <h2>Specifications</h2>
+            </InfoContainer>
+        </Wrapper>
+        <Wrapper> 
+            <ReviewContainer>
+                <ReviewForm>
+                    <RatingInput>
+                        <h2>Rating:</h2>
+                        
+                        <fieldset class="starability-heartbeat">
+                            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                            <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                            <label for="first-rate1" title="Terrible">1 star</label>
+                            <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                            <label for="first-rate2" title="Not good">2 stars</label>
+                            <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                            <label for="first-rate3" title="Average">3 stars</label>
+                            <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                            <label for="first-rate4" title="Very good">4 stars</label>
+                            <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                            <label for="first-rate5" title="Amazing">5 stars</label>
+                        </fieldset>
+                    </RatingInput>
 
+                    <div>
+                        <label for="review-body">Review Description:</label>
+                        <ReviewText name="review[body]" id="review-body" cols="30" rows="3" required></ReviewText>
+                    </div>
+                </ReviewForm>
+                <Review>
+                    <Ratings>
+                        <p class="starability-result" data-rating="5"></p>
+                    </Ratings>
+                    Greaty Quality. Absolutely recommended for anyone
+                    who's looking for some desi style on the more
+                    mischivieous end.
+                </Review>
+                <Review>
+                    <Ratings>
+                        <p class="starability-result" data-rating="1"></p>
+                    </Ratings>
+                    Terrible shade of red! I hate it. Looks great on the
+                    model but looks awful in real life. Total loss.
+                </Review>
+                <Review>
+                    <Ratings>
+                        <p class="starability-result" data-rating="4"></p>
+                    </Ratings>
+                    Beginning to like this style of clothing. Keep more coming.
+                </Review>
+            </ReviewContainer>
+            <SpecificationContainer>
+                <h2>Specifications</h2>
+                
+                <Specifications>
                     <h3>Type</h3>
                     <div>Ikat</div>
 
@@ -123,7 +251,7 @@ const Product = () => {
                     <h3>Wash Care</h3>
                     <div>Machine Wash</div>
                 </Specifications>
-            </InfoContainer>
+            </SpecificationContainer>
         </Wrapper>
         <Newsletter/>
         <Footer/>
