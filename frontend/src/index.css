@@ -42,6 +42,7 @@ body {
 }
 
   .scrollbar::-webkit-scrollbar-track {
+      box-shadow: none;
       -webkit-box-shadow: none;
       background-color: #F5F5F5;
   }

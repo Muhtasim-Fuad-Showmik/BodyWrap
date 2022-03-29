@@ -6,10 +6,11 @@ import ProductList from './pages/ProductList';
 import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Cart from './pages/Cart';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Cart />
   </React.StrictMode>,
   document.getElementById('root')
 );
