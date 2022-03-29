@@ -1,6 +1,16 @@
 :root {
   --darkred: #9b2226;
   --red: #ae2012;
+  --maroonoak: #590d22;
+  --deepclaret: #800f2f;
+  --rouge: #a4133c;
+  --virtualpink: #c9184a;
+  --lovered: #ff4d6d;
+  --heatstroke: #ff758f;
+  --charmingcherry: #ff8fa3;
+  --lightpink: #ffb3c1;
+  --sweetsixteen: #ffccd5;
+  --powderpuff: #fff0f3;
   --orange: #bb3e03;
   --chromeyellow: #ca6702;
   --yellow: #ee9b00;
@@ -26,3 +36,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.scrollbar {
+  overflow: auto;
+}
+
+  .scrollbar::-webkit-scrollbar-track {
+      -webkit-box-shadow: none;
+      background-color: #F5F5F5;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: #F5F5F5;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+      background-color: var(--red);
+      border-radius: 10px;
+  }
