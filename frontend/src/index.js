@@ -4,10 +4,12 @@ import './index.css';
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import Product from './pages/Product';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Product />
+    <Login />
   </React.StrictMode>,
   document.getElementById('root')
 );

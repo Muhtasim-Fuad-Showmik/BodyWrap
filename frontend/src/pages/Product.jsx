@@ -113,7 +113,7 @@ const Amount = styled.span`
 const Button = styled.button`
     padding: 15px;
     border: 2px solid var(--maroonoak);
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: var(--deepclaret);
     color: var(--lightpink);
     cursor: pointer;
@@ -162,7 +162,7 @@ const Specifications = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 350px;
+    min-height: 350px;
 `
 
 const Product = () => {
