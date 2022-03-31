@@ -1,5 +1,6 @@
 import "../starability-heartbeat.css";
 import styled from "styled-components";
+import {mobile} from '../responsive';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Announcement from "../components/Announcement";
@@ -12,6 +13,11 @@ const Container = styled.div``
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+
+    ${mobile({ 
+        padding: "10px",
+        flexDirection: "column"
+    })}
 `
 
 const ImgAndReviewsContainer = styled.div`
@@ -22,6 +28,10 @@ const Image = styled.img`
     width: 100%;
     height: 100vh;
     object-fit: cover;
+
+    ${mobile({ 
+        height: "40vh"
+    })}
 `
 
 const TinyImage = styled.img`
@@ -30,11 +40,20 @@ const TinyImage = styled.img`
     object-fit: cover;
     border-radius: 5px;
     margin: 5px 5px;
+
+    ${mobile({ 
+        width: "20vw",
+        height: "20vw"
+    })}
 `
 
 const InfoContainer = styled.div`
     flex: 1;
     padding: 0px 50px;
+
+    ${mobile({ 
+        padding: "10px"
+    })}
 `
 
 const Title = styled.h1`
@@ -57,6 +76,10 @@ const FilterContainer = styled.div`
     margin: 30px 0px;
     display: flex;
     justify-content: space-between;
+
+    ${mobile({ 
+        width: "100%"
+    })}
 `
 
 const Filter = styled.div`
@@ -91,6 +114,10 @@ const AddContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    ${mobile({ 
+        width: "100%"
+    })}
 `
 
 const AmountContainer = styled.div`

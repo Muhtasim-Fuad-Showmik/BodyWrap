@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {mobile} from '../responsive';
 import { useState } from "react";
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
 import { sliderItems } from "../data";
@@ -9,6 +10,8 @@ const Container = styled.div`
     display: flex;
     position: relative;
     overflow: hidden;
+
+    ${mobile({ display: "none" })}
 `
 
 const Arrow = styled.div`
