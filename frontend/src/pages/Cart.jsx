@@ -6,7 +6,9 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-const Container = styled.div``;
+const Container = styled.div`
+    width: 100%;
+`;
 
 const Wrapper = styled.div`
     padding: 20px;
