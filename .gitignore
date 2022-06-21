@@ -1,2 +1,4 @@
 /ecommerce-api/.env
 /ecommerce-api/node_modules
+/frontend/node_modules
+/payment/node_modules
