@@ -199,11 +199,11 @@ const Product = () => {
         <Announcement/>
         <Wrapper>
             <ImgAndReviewsContainer>
-                <Image src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-1.webp"/>
-                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-1.webp"/>
-                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-2.webp"/>
-                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-3.jpg"/>
-                <TinyImage src="images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-4.webp"/>
+                <Image src="../images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-1.webp"/>
+                <TinyImage src="../images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-1.webp"/>
+                <TinyImage src="../images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-2.webp"/>
+                <TinyImage src="../images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-3.jpg"/>
+                <TinyImage src="../images/products/saree-mall-saree-mall-blazing-red-linen-blend-saree-989/Saree-mall-Red--Off-White-Ikat-Printed-Sarees-4.webp"/>
             </ImgAndReviewsContainer>
             <InfoContainer>
                 <Title>Saree Mall Blazing Red Linen Blend Saree</Title>
