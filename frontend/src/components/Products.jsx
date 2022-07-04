@@ -1,8 +1,10 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { popularProducts } from '../data';
 import Product from './Product';
+import axios from 'axios';
 
 const Container = styled.div`
     padding: 20px;
@@ -12,11 +14,40 @@ const Container = styled.div`
 `;
 
 const Products = ({cat, filters, sort}) => {
-    console.log(cat, filters, sort);
+    const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+
+    useEffect(() => {
+        const getProducts = async () => {
+            try{
+                const res = await axios.get( 
+                    cat 
+                        ? `http://localhost:5000/api/products?category=${cat}` 
+                        : "http://localhost:5000/api/products"
+                );
+                setProducts(res.data);
+            } catch(err){
+
+            };
+        };
+
+        getProducts();
+    }, [cat]);
+
+    useEffect(() => {
+        console.log(filters);
+        cat && setFilteredProducts(
+            products.filter(item => Object.entries(filters).every(([key, value]) => 
+                item[key].includes(key == "color" ? value.toLowerCase() : value)
+                )
+            )
+        );
+        
+    }, [products, cat, filters]);
 
     return ( 
         <Container>
-            {popularProducts.map(item=>(
+            {filteredProducts.map(item=>(
                 <Product item={item} key={item.id} />
             ))}
         </Container>
