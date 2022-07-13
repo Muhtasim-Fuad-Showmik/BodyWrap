@@ -5,7 +5,6 @@ import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import { red } from "@material-ui/core/colors";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
@@ -67,7 +66,7 @@ const ProductList = () => {
         <Container>
             <Navbar />
             <Announcement />
-            <Title>Dresses</Title>
+            <Title>{cat.charAt(0).toUpperCase() + cat.slice(1)}</Title>
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Products:</FilterText>
